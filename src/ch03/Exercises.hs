@@ -1,0 +1,32 @@
+module CH3Exercises where
+-- Reading syntax {{{
+-- 1.
+-- a.
+-- concat [[1, 2, 3], [4, 5, 6]]
+-- at first I thought concat was the same as (++)
+-- then I used the repl ":t concat"
+-- (++) :: [a] -> [a] -> [a]
+-- concat :: Foldable t => t [a] -> [a]
+-- b.
+-- ++ [1, 2, 3] [4, 5, 6]
+-- looks good to me
+-- c.
+-- ++ "hello" " world"
+-- looks good to me, Strings are Lists!
+-- d.
+-- ["hello" ++ " world"]
+-- A List in a List
+-- e.
+-- 4 !! "hello"
+-- !! is an infix-operator, it should be the following:
+-- "hello" !! 4
+-- f.
+-- (!!) "hello" 4
+-- or like this, which is also correct thanks to ()
+-- g.
+-- take "4 lovely"
+-- take expects an Int and a [Char], the " is misplaced
+-- h.
+-- take 3 "awesome"
+-- this looks better
+-- }}}
