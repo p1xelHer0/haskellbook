@@ -1,0 +1,75 @@
+module UnderstandingFolds where
+-- 1.
+-- foldr (*) 1 [1..5]
+-- will return the same result as
+-- a) flip (*) 1 [1..5]
+-- -> no, we cant apply 1 [1..5] to (*)
+-- b) foldl (flip (*)) 1 [1..5]
+-- -> yes, (*) is commutative and `1` is the identity, so it doesn't matter if
+-- -> we flip or foldr or foldr
+-- c) foldl (*) 1 [1..5]
+-- -> yes, see b)
+--
+-- 2.
+-- write out the evaluationssteps for
+-- foldl f z []     = z
+-- foldl f z (x:xs) = let z' = z `f` x
+--                    in foldl f z' xs
+-- foldl (flip (*)) 1 [1..3]
+-- foldl (flip (*)) ((flip (*) 1 1)) [2,3]
+-- foldl (flip (*)) (flip (*) ((flip (*) 1 1)) 2) [3]
+-- foldl (flip (*)) (flip (*) ((flip (*) ((flip (*) 1 1)) 2)) 3) []
+-- foldl (flip (*)) (flip (*) ((flip (*) (((*) 1 1)) 2)) 3) []
+-- foldl (flip (*)) (flip (*) ((flip (*) 1 2)) 3) []
+-- foldl (flip (*)) (flip (*) (((*) 2 1)) 3) []
+-- foldl (flip (*)) (flip (*) 2 3) []
+-- foldl (flip (*)) ((*) 3 2) []
+-- foldl (flip (*)) 6 [] <- patternmatch on [], return z
+-- z = 6, -> 6
+--
+-- 3.
+-- One difference between foldr and foldl is:
+-- a) foldr, but not foldl, traverses the spine of a list from right to left
+-- -> no, they both traverses the spine from the beginning to end, left to right
+-- b) foldr, but not foldl, always forces the rest of the fold
+-- -> yes, `foldr` adds `z` to the final element of the list, whereas
+-- -> `foldl` adds it to the first
+-- c) foldr, but not foldl, associates to the right
+-- -> yes, thats why it's called `foldr`
+-- d) foldr, but not foldl, is recursive
+-- -> no, they both are recursive
+--
+-- 4.
+-- Folds are catamorphisms, which means they are generally used to
+-- a) reduce structure
+-- -> yes
+-- b) expand structure
+-- -> no
+-- c) render you catatonic
+-- -> no
+-- d) generate infnite data structures
+-- -> no
+--
+-- 5.
+-- The following are simple folds very similar to what you’ve already seen,
+-- but each has at least one error. Please fix them and test in your REPL
+-- a) foldr (++) ["woot", "WOOT", "woot"]
+-- -> foldr (++) "" ["woot", "WOOT", "woot"]
+-- b) foldr max "" "fear is the little death"
+-- -> foldr max 'x' "fear is the little death"
+-- c) foldr and True [False, True]
+-- -> foldr (&&) True [False, True]
+-- d) This one is more subtle than the previous. Can it ever
+--    return a different answer?
+-- -> foldr (||) True [False, True]
+-- -> foldr (not (||)) False [False, True]
+-- e) foldl ((++) . show) "" [1..5]
+-- -> foldr ((++) . show) "" [1..5]
+-- f) foldr const 'a' [1..5]
+-- -> foldr const 1 [1..5]
+-- g) foldr const 0 "tacos"
+-- -> foldl const 0 "tacos"
+-- h) foldl (flip const) 0 "burritos"
+-- -> foldr (flip const) 0 "burritos"
+-- i) foldl (flip const) 'z' [1..5]
+-- -> foldr (flip const) 'z' [1..5]
