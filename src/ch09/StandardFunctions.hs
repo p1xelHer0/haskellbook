@@ -28,12 +28,16 @@ myAny _ [] = False
 myAny f (x:xs) = f x || myAny f xs
 
 -- 3.1. myAny returns True if the element exists in the list
-myElem :: Eq a => a -> [a] -> Bool
+myElem
+  :: Eq a
+  => a -> [a] -> Bool
 myElem _ [] = False
 myElem x (y:ys) = x == y || myElem x ys
 
 -- 3.2. write another version that uses any
-myElemWithAny :: Eq a => a -> [a] -> Bool
+myElemWithAny
+  :: Eq a
+  => a -> [a] -> Bool
 myElemWithAny _ [] = False
 myElemWithAny x y = any (== x) y
 
