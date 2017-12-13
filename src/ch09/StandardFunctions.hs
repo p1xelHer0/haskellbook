@@ -60,16 +60,32 @@ squishMap f (x:xs) = f x ++ squishMap f xs
 squishAgain :: [[a]] -> [a]
 squishAgain = squishMap id
 
--- 8.
+-- 8. myMaximumBy takes a comparison function and a list and returns the
+--    greatest element of the list based on the last value that the comparison
+--    returned GT for
 -- let xs = [1, 53, 9001, 10]
 -- myMaximum compare xs
 -- 9001
 myMaximumBy :: (a -> a -> Ordering) -> [a] -> a
-myMaximumBy = undefined
+myMaximumBy _ [x] = x
+myMaximumBy f (x:xs) =
+  case f x y of
+    LT -> y
+    EQ -> x
+    GT -> x
+  where y = myMaximumBy f xs
 
--- 9.
+-- 9. myMinimumBy takes a comparison function and a list and returns the
+--    least element of the list based on the last value that the comparison
+--    returned LT for
 -- let xs = [1, 53, 9001, 10]
 -- myMaximum compare xs
 -- 1
 myMinimumBy :: (a -> a -> Ordering) -> [a] -> a
-myMinimumBy = undefined
+myMinimumBy _ [x] = x
+myMinimumBy f (x:xs) =
+  case f x y of
+    LT -> x
+    EQ -> x
+    GT -> y
+  where y = myMinimumBy f xs
