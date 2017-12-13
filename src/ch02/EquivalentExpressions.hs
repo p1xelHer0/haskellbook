@@ -1,0 +1,33 @@
+module EquivalentExpressions where
+
+-- 1.
+-- 1 + 1
+-- 2
+-- True
+-- 2.
+-- 10 ^ 2
+-- 10 + 9 * 10
+-- 10 + (9 * 10) -> 10 + 90 = 100
+-- 10 ^ 2 = 10 * 10 = 100
+-- True
+-- 3.
+-- 400 - 37
+-- (-) 37 400
+-- these argument are in the wrong order
+-- this would result in 37 - 400
+-- False
+-- 4.
+-- 100 `div` 3
+-- 100 / 3
+-- :info div
+-- class (Real a, Enum a) => Integral a where
+-- :info /
+-- class Num a => Fractional a where
+-- one is Integral, one is Fractional
+-- False
+-- 5.
+-- 2 * 5 + 18
+-- 2 * (5 + 18)
+-- this is not the same since we explicitly
+-- tell GHC to evaluate 5 + 18 before 2
+-- False

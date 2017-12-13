@@ -1,5 +1,4 @@
-module CH3Exercises where
--- Reading syntax {{{
+module ReadingSyntax where
 -- 1.
 -- a.
 -- concat [[1, 2, 3], [4, 5, 6]]
@@ -29,4 +28,3 @@ module CH3Exercises where
 -- h.
 -- take 3 "awesome"
 -- this looks better
--- }}}

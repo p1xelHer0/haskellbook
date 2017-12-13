@@ -11,11 +11,10 @@ circularUpper n c
 
 circularLower :: Int -> Char -> Int
 circularLower n c
-  | ord c + mod n 26 > ord 'z' =
-  ord 'a' + mod (ord c + mod n 26) (ord 'z') - 1
+  | ord c + mod n 26 > ord 'z' = ord 'a' + mod (ord c + mod n 26) (ord 'z') - 1
   | otherwise = ord c + mod n 26
 
-circularShift:: Int -> Char -> Int
+circularShift :: Int -> Char -> Int
 circularShift n c
   | isUpper c = circularUpper n c
   | isLower c = circularLower n c
