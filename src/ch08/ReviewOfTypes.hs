@@ -1,6 +1,5 @@
 Module ReviewOfTypes where
 
--- Review of types {{{
 -- 1.
 -- d)
 -- 2.
@@ -9,4 +8,3 @@ Module ReviewOfTypes where
 -- a) c)
 -- 4.
 -- b)
--- }}}

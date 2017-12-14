@@ -6,7 +6,7 @@ myWords [] = []
 myWords (' ':s) = myWords s
 myWords s = takeWhile (/= ' ') s : myWords (dropWhile (/= ' ') s)
 
--- 2. {{{
+-- 2.
 firstSen = "Tyger Tyger, burning bright\n"
 
 secondSen = "In the forests of the night\n"
@@ -38,8 +38,7 @@ shouldEqual =
 main :: IO ()
 main = print $ "Are they equal? " ++ show (myLines sentences == shouldEqual)
 
--- }}}
--- 3. {{{
+-- 3.
 mySplit :: Char -> String -> [String]
 mySplit _ [] = []
 mySplit c s@(x:xs) =

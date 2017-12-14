@@ -3,8 +3,8 @@ module Data.Char where
 import Data.Char
 
 -- 1.
--- isUpper :: Char -> Bool
--- isLower :: Char -> Bool
+-- -> isUpper :: Char -> Bool
+-- -> isLower :: Char -> Bool
 -- 2.
 filterUpperCase :: String -> String
 filterUpperCase = filter isUpper

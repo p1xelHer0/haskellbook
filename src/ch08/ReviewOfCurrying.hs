@@ -46,4 +46,3 @@ frappe = flippy "haha"
 -- cattyConny (flippy "Pugs" "are") "awesome"
 --   cattyConny ("are mrow Pugs") "aresome"
 --     "are mrow Pugs mrow awesome"
--- }}}

@@ -1,14 +1,13 @@
 module UnderstandingFolds where
 -- 1.
--- foldr (*) 1 [1..5]
+-- -> foldr (*) 1 [1..5]
 -- will return the same result as
 -- a) flip (*) 1 [1..5]
--- -> no, we cant apply 1 [1..5] to (*)
+-- -> no, we cant apply 1 [1..5] to (*).
 -- b) foldl (flip (*)) 1 [1..5]
--- -> yes, (*) is commutative and `1` is the identity, so it doesn't matter if
--- -> we flip or foldr or foldr
+-- -> yes, (*) is commutative and `1` is the identity, so it doesn't matter if we flip or foldr or foldr.
 -- c) foldl (*) 1 [1..5]
--- -> yes, see b)
+-- -> yes, see b).
 --
 -- 2.
 -- write out the evaluationssteps for
@@ -29,38 +28,35 @@ module UnderstandingFolds where
 --
 -- 3.
 -- One difference between foldr and foldl is:
--- a) foldr, but not foldl, traverses the spine of a list from right to left
--- -> no, they both traverses the spine from the beginning to end, left to right
--- b) foldr, but not foldl, always forces the rest of the fold
--- -> yes, `foldr` adds `z` to the final element of the list, whereas
--- -> `foldl` adds it to the first
--- c) foldr, but not foldl, associates to the right
--- -> yes, thats why it's called `foldr`
--- d) foldr, but not foldl, is recursive
--- -> no, they both are recursive
+-- a) foldr, but not foldl, traverses the spine of a list from right to left.
+-- -> no, they both traverses the spine from the beginning to end, left to right.
+-- b) foldr, but not foldl, always forces the rest of the fold.
+-- -> yes, `foldr` adds `z` to the final element of the list, whereas `foldl` adds it to the first.
+-- c) foldr, but not foldl, associates to the right.
+-- -> yes, thats why it's called `foldr`.
+-- d) foldr, but not foldl, is recursive.
+-- -> no, they both are recursive.
 --
 -- 4.
--- Folds are catamorphisms, which means they are generally used to
+-- Folds are catamorphisms, which means they are generally used to:
 -- a) reduce structure
--- -> yes
+-- -> yes.
 -- b) expand structure
--- -> no
+-- -> no.
 -- c) render you catatonic
--- -> no
+-- -> no.
 -- d) generate infnite data structures
--- -> no
+-- -> no.
 --
 -- 5.
--- The following are simple folds very similar to what you’ve already seen,
--- but each has at least one error. Please fix them and test in your REPL
+-- The following are simple folds very similar to what you’ve already seen, but each has at least one error. Please fix them and test in your REPL
 -- a) foldr (++) ["woot", "WOOT", "woot"]
 -- -> foldr (++) "" ["woot", "WOOT", "woot"]
 -- b) foldr max "" "fear is the little death"
 -- -> foldr max 'x' "fear is the little death"
 -- c) foldr and True [False, True]
 -- -> foldr (&&) True [False, True]
--- d) This one is more subtle than the previous. Can it ever
---    return a different answer?
+-- d) This one is more subtle than the previous. Can it ever return a different answer?
 -- -> foldr (||) True [False, True]
 -- -> foldr (not (||)) False [False, True]
 -- e) foldl ((++) . show) "" [1..5]
