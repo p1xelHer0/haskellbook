@@ -37,7 +37,7 @@ doge = Plane PapuAir (Size 9000)
 
 -- 1. What is the type of myCar?
 -- -- :t myCar :: Vehicle
--- 2. Given the following, de ne the functions:
+-- 2. Given the following, define the functions:
 isCar :: Vehicle -> Bool
 isCar (Car _ _) = True
 isCar _ = False

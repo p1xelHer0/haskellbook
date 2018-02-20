@@ -1,9 +1,12 @@
 module ForExmaple where
 
-data Example = MakeExample deriving Show
+data Example =
+  MakeExample
+  deriving (Show)
 
-data LikeExample = MakeLikeExample Int deriving (Show, Eq)
-
+data LikeExample =
+  MakeLikeExample Int
+  deriving (Show, Eq)
 -- 1. You can query the type of a value in GHCi with the :type command, also abbreviated :t.
 -- What is the type of data constructor MakeExample? What happens when you request the type of Example?
 -- > :t Example = MakeExample :: Example, since the MakeExample is just the constructor, which `constructs` the type, which is on the lefthand side of the `=`. The actual type is still `Example`
