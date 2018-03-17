@@ -28,3 +28,21 @@ caesar n = map (circularChar n)
 
 unCaesar :: Int -> String -> String
 unCaesar n = caesar (-n)
+
+addCharCircular :: Char -> Char -> Char
+addCharCircular c1 = circularChar (ord c1 - 97)
+
+subtractCharCirular :: Char -> Char -> Char
+subtractCharCirular c1 = circularChar ((ord c1 - 97) * (-1))
+
+-- only works for lower case as of now :(
+vigenere :: String -> String -> String
+vigenere keyword = zipWith addCharCircular (concat $ repeat keyword)
+
+-- only works for lower case as of now :(
+unVigenere :: String -> String -> String
+unVigenere keyword = zipWith subtractCharCirular (concat $ repeat keyword)
+
+-- should do
+-- -> vigenere "ally" "meetatdawn"
+-- => "mppraeoywy"
