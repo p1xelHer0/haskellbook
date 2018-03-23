@@ -17,26 +17,26 @@ theDatabase =
   , DbDate (UTCTime (fromGregorian 1921 5 1) (secondsToDiffTime 34123))
   ]
 
--- 1. Write a function that filters for DbDate values and returns list of the UTCTime values inside them.
+-- 1.
 filterDbDate :: [DatabaseItem] -> [UTCTime]
 filterDbDate xs =
   [ x
   | (DbDate x) <- xs ]
 
--- 2. Write a function that filters for DbNumber values and returns a list of the Integer values inside them.
+-- 2.
 filterDbNumber :: [DatabaseItem] -> [Integer]
 filterDbNumber xs =
   [ x
   | (DbNumber x) <- xs ]
 
--- 3. Write a function that gets the most recent date.
+-- 3.
 mostRecent :: [DatabaseItem] -> UTCTime
 mostRecent = maximum . filterDbDate
 
--- 4. Write a function that sums all of the DbNumber values.
+-- 4.
 sumDb :: [DatabaseItem] -> Integer
 sumDb = sum . filterDbNumber
 
--- 5. Write a function that gets the average of the DbNumber values. You'll probably need to use fromIntegral to get from Integer to Double.
+-- 5.
 avgDb :: [DatabaseItem] -> Double
 avgDb xs = (realToFrac (sumDb xs) / genericLength xs) :: Double
