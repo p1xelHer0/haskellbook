@@ -13,7 +13,7 @@ data Nat
 -- 2
 natToInteger :: Nat -> Integer
 natToInteger Zero = 0
-natToInteger (Succ x) =
+natToInteger (Succ a) = 1 + natToInteger a
 
 -- >>> integerToNat 0
 -- Just Zero
@@ -24,4 +24,5 @@ natToInteger (Succ x) =
 -- >>> integerToNat (-1)
 -- Nothing
 -- integerToNat :: Integer -> Maybe Nat
--- integerToNat 0 = Just 0
+integerToNat 0 = Just Zero
+integerToNat a = Just
