@@ -25,4 +25,6 @@ natToInteger (Succ a) = 1 + natToInteger a
 -- Nothing
 -- integerToNat :: Integer -> Maybe Nat
 integerToNat 0 = Just Zero
-integerToNat a = Just
+integerToNat a = Just (go a) where
+  go 0 = Zero
+  go a = Succ (go (a - 1))
