@@ -1,7 +1,7 @@
-module Main where
+module Notes where
 
-main :: IO ()
-main = print (palindrome testString)
+notes :: IO ()
+notes = print (palindrome testString)
 
 testString = "blahalb"
 
