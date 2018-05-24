@@ -1,4 +1,8 @@
-module Recursion where
+module Ch08.Recursion
+  ( digitToWord
+  , digits
+  , wordNumber
+  ) where
 
 import Data.List (intersperse, intercalate)
 

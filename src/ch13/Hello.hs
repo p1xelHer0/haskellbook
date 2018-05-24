@@ -1,4 +1,4 @@
-module Hello
+module Ch13.Hello
   ( sayHello
   ) where
 

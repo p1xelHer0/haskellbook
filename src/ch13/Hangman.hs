@@ -1,4 +1,6 @@
-module Hangman where
+module Ch13.Hangman
+  ( game
+  ) where
 
 import Control.Monad (forever)
 import Data.Char (toLower)
@@ -23,8 +25,8 @@ data Puzzle =
          String
          String
 
-main :: IO ()
-main = do
+game :: IO ()
+game = do
   word <- randomWord'
   let puzzle = freshPuzzle (fmap toLower word)
   runGame puzzle

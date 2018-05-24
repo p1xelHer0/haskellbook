@@ -1,8 +1,4 @@
-*
-
-!.gitignore
-!README.md
-!src/**
-!.editorconfig
-
-!*/
+.DS_Store
+.stack-work/
+.book.*
+tags

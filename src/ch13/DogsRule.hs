@@ -1,4 +1,4 @@
-module DogsRule
+module Ch13.DogsRule
   ( dogs
   ) where
 
