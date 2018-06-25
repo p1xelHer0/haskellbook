@@ -20,6 +20,7 @@ instance TooMany (Int, String) where
 -- 2.
 instance TooMany (Int, Int) where
   tooMany (n, m) = n + m > 42
+
 -- 3. TODO
 instance TooMany (Num a, TooMany a) => (a, a) where
-  tooMany (n, m) = tooMany (n + m) > 42
+  tooMany (n, m) = tooMany (n, m)

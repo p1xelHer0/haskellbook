@@ -24,6 +24,7 @@ executable haskellbook
 library
   hs-source-dirs:   src
   exposed-modules:  Ch08.Recursion
+                  , Ch11.AsPatterns
                   , Ch13.DogsRule
                   , Ch13.Hello
                   , Ch13.Hangman
@@ -41,6 +42,7 @@ test-suite test
   main-is:          Spec.hs
   other-modules:    Ch14.WordNumberTest
                   , Ch14.UsingQuickCheck
+                  , Ch14.Idempotence
   build-depends:    base
                   , haskellbook
                   , hspec

@@ -1,4 +1,6 @@
-module AsPatterns where
+module Ch11.AsPatterns
+  ( capitalizeWord
+  ) where
 
 import Data.Char
 
@@ -40,9 +42,10 @@ splitAtPeriod ('.':s) = "." : splitAtPeriod s
 splitAtPeriod s = takeWhile (/= '.') s : splitAtPeriod (dropWhile (/= '.') s)
 
 splitSentence :: String -> [String]
-splitSentence = map capitalizeFirstNonWhitespace . splitAtPeriod where
-  capitalizeFirstNonWhitespace (' ':xs) = ' ' : capitalizeFirstNonWhitespace xs
-  capitalizeFirstNonWhitespace (x:xs) = toUpper x : xs
+splitSentence = map capitalizeFirstNonWhitespace . splitAtPeriod
+  where
+    capitalizeFirstNonWhitespace (' ':xs) = ' ' : capitalizeFirstNonWhitespace xs
+    capitalizeFirstNonWhitespace (x:xs) = toUpper x : xs
 
 capitalizeParagraph :: String -> String
 capitalizeParagraph sentence = concat (splitSentence sentence)
