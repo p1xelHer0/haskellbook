@@ -43,6 +43,7 @@ test-suite test
   other-modules:    Ch14.WordNumberTest
                   , Ch14.UsingQuickCheck
                   , Ch14.Idempotence
+                  , Ch14.GenRandomGenerator
   build-depends:    base
                   , haskellbook
                   , hspec

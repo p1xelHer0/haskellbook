@@ -34,6 +34,7 @@ splitAtSpace (' ':s) = splitAtSpace s
 splitAtSpace s = takeWhile (/= ' ') s : splitAtSpace (dropWhile (/= ' ') s)
 
 capitalizeWord :: String -> String
+capitalizeWord [] = []
 capitalizeWord (x:xs) = toUpper x : xs
 
 splitAtPeriod :: String -> [String]

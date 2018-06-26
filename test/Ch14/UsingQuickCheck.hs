@@ -7,6 +7,7 @@ import Test.QuickCheck
 
 tests :: IO ()
 tests = do
+  putStrLn "UsingQuickCheck: "
   quickCheck prop_halfLessThanWhole
   quickCheck prop_sortedList
   quickCheck prop_plusAssociative
