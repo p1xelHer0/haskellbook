@@ -27,6 +27,7 @@ library
                   , Ch11.AsPatterns
                   , Ch13.DogsRule
                   , Ch13.Hello
+                  , Ch13.Ciphers
                   , Ch13.Hangman
                   , Ch14.Morse
   build-depends:    base
@@ -45,6 +46,7 @@ test-suite test
                   , Ch14.Idempotence
                   , Ch14.GenRandomGenerator
                   , Ch14.HangmanTesting
+                  , Ch14.ValidatingCiphers
   build-depends:    base
                   , haskellbook
                   , hspec

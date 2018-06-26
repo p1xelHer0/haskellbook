@@ -1,4 +1,7 @@
-module Ciphers where
+module Ch13.Ciphers
+  ( caesar
+  , vigenere
+  ) where
 
 import Data.Char
 
