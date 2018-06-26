@@ -44,6 +44,7 @@ test-suite test
                   , Ch14.UsingQuickCheck
                   , Ch14.Idempotence
                   , Ch14.GenRandomGenerator
+                  , Ch14.HangmanTesting
   build-depends:    base
                   , haskellbook
                   , hspec

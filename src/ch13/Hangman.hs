@@ -1,5 +1,8 @@
 module Ch13.Hangman
   ( game
+  , fillInCharacterCorrect
+  , fillInCharacterWrong
+  , handleGuess
   ) where
 
 import Control.Monad (forever)
