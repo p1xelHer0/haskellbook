@@ -30,6 +30,7 @@ library
                   , Ch13.Ciphers
                   , Ch13.Hangman
                   , Ch14.Morse
+                  , Ch15.OptionalMonoid
   build-depends:    base
                   , containers
                   , random
@@ -47,6 +48,8 @@ test-suite test
                   , Ch14.GenRandomGenerator
                   , Ch14.HangmanTesting
                   , Ch14.ValidatingCiphers
+                  , Ch15.TestingQuickChecksPatience
+                  , Ch15.MaybeAnotherMonoid
   build-depends:    base
                   , haskellbook
                   , hspec

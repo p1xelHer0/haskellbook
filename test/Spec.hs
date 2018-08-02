@@ -5,6 +5,8 @@ import qualified Ch14.UsingQuickCheck as UsingQuickCheck
 import qualified Ch14.Idempotence as Idempotence
 import qualified Ch14.HangmanTesting as Hangman
 import qualified Ch14.ValidatingCiphers as Ciphers
+import qualified Ch15.TestingQuickChecksPatience as Patience
+import qualified Ch15.MaybeAnotherMonoid as Monoid
 
 main :: IO ()
 main = do
@@ -13,3 +15,5 @@ main = do
   Idempotence.tests
   Hangman.tests
   Ciphers.tests
+  Patience.tests
+  Monoid.tests

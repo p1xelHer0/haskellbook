@@ -20,6 +20,6 @@ f x =
   (capitalizeWord x == twice capitalizeWord x) &&
   (capitalizeWord x == fourTimes capitalizeWord x)
 
--- f' :: (Ord a) => [a] -> Bool
+-- 2.
 f' :: [Int] -> Bool
 f' x = (sort x == twice sort x) && (sort x == fourTimes sort x)
