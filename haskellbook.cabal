@@ -50,6 +50,7 @@ test-suite test
                   , Ch14.ValidatingCiphers
                   , Ch15.TestingQuickChecksPatience
                   , Ch15.MaybeAnotherMonoid
+                  , Ch15.Semigroup
   build-depends:    base
                   , haskellbook
                   , hspec

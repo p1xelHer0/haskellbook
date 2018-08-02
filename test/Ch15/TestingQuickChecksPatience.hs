@@ -1,11 +1,11 @@
 module Ch15.TestingQuickChecksPatience where
 
 import Test.QuickCheck
-
 import Data.Monoid
 
 tests :: IO ()
 tests = do
+  putStrLn "Patience (supposed to fail!):"
   let ma = monoidAssoc
       mli = monoidLeftIdentity
       mlr = monoidRightIdentity

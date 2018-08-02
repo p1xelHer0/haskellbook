@@ -2,6 +2,7 @@ module Ch14.Idempotence where
 
 import Test.QuickCheck
 import Data.List (sort)
+
 import Ch11.AsPatterns (capitalizeWord)
 
 tests :: IO ()

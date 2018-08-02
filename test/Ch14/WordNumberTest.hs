@@ -1,6 +1,7 @@
 module Ch14.WordNumberTest where
 
 import Test.Hspec
+
 import Ch08.Recursion (digitToWord, digits, wordNumber)
 
 tests :: IO ()
