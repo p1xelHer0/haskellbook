@@ -6,8 +6,9 @@ import qualified Ch14.Idempotence as Idempotence
 import qualified Ch14.HangmanTesting as Hangman
 import qualified Ch14.ValidatingCiphers as Ciphers
 import qualified Ch15.TestingQuickChecksPatience as Patience
-import qualified Ch15.MaybeAnotherMonoid as Monoid
+import Ch15.MaybeAnotherMonoid
 import qualified Ch15.Semigroup as Semigroup
+import qualified Ch15.Monoid as Monoid
 
 main :: IO ()
 main = do
@@ -17,5 +18,6 @@ main = do
   Hangman.tests
   Ciphers.tests
   Patience.tests
-  Monoid.tests
+  Ch15.MaybeAnotherMonoid.tests
   Semigroup.tests
+  Monoid.tests

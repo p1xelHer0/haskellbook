@@ -51,6 +51,7 @@ test-suite test
                   , Ch15.TestingQuickChecksPatience
                   , Ch15.MaybeAnotherMonoid
                   , Ch15.Semigroup
+                  , Ch15.Monoid
   build-depends:    base
                   , haskellbook
                   , hspec
