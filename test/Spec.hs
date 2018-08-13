@@ -10,6 +10,7 @@ import Ch15.MaybeAnotherMonoid
 import qualified Ch15.Semigroup as Semigroup
 import qualified Ch15.Monoid as Monoid
 import qualified Ch16.InstancesOfFunc as InstancesOfFunc
+import qualified Ch16.Possibly as Possibly
 
 main :: IO ()
 main = do
@@ -23,3 +24,4 @@ main = do
   Semigroup.tests
   Monoid.tests
   InstancesOfFunc.tests
+  Possibly.tests
