@@ -52,6 +52,8 @@ test-suite test
                   , Ch15.MaybeAnotherMonoid
                   , Ch15.Semigroup
                   , Ch15.Monoid
+                  , Ch16.FunctorProp
+                  , Ch16.InstancesOfFunc
   build-depends:    base
                   , haskellbook
                   , hspec

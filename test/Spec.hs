@@ -9,6 +9,7 @@ import qualified Ch15.TestingQuickChecksPatience as Patience
 import Ch15.MaybeAnotherMonoid
 import qualified Ch15.Semigroup as Semigroup
 import qualified Ch15.Monoid as Monoid
+import qualified Ch16.InstancesOfFunc as InstancesOfFunc
 
 main :: IO ()
 main = do
@@ -21,3 +22,4 @@ main = do
   Ch15.MaybeAnotherMonoid.tests
   Semigroup.tests
   Monoid.tests
+  InstancesOfFunc.tests
