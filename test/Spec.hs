@@ -11,6 +11,7 @@ import qualified Ch15.Semigroup as Semigroup
 import qualified Ch15.Monoid as Monoid
 import qualified Ch16.InstancesOfFunc as InstancesOfFunc
 import qualified Ch16.Possibly as Possibly
+import qualified Ch16.ShortExercise as Either
 
 main :: IO ()
 main = do
@@ -25,3 +26,4 @@ main = do
   Monoid.tests
   InstancesOfFunc.tests
   Possibly.tests
+  Either.tests

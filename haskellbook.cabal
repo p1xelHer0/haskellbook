@@ -55,6 +55,7 @@ test-suite test
                   , Ch16.FunctorProp
                   , Ch16.InstancesOfFunc
                   , Ch16.Possibly
+                  , Ch16.ShortExercise
   build-depends:    base
                   , haskellbook
                   , hspec
