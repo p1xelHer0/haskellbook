@@ -56,6 +56,7 @@ test-suite test
                   , Ch16.InstancesOfFunc
                   , Ch16.Possibly
                   , Ch16.ShortExercise
+                  , Ch17.BadMonoid
   build-depends:    base
                   , haskellbook
                   , hspec
