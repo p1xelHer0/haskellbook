@@ -12,6 +12,8 @@ import qualified Ch15.Monoid as Monoid
 import qualified Ch16.InstancesOfFunc as InstancesOfFunc
 import qualified Ch16.Possibly as Possibly
 import qualified Ch16.ShortExercise as Either
+-- import qualified Ch17.BadMonoid as BadMonoid
+import qualified Ch17.ListApplicative as ListApplicative
 
 main :: IO ()
 main = do
@@ -27,3 +29,5 @@ main = do
   InstancesOfFunc.tests
   Possibly.tests
   Either.tests
+  -- BadMonoid.tests
+  ListApplicative.tests

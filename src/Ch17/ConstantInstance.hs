@@ -1,4 +1,4 @@
-module ConstantInstance where
+module Ch17.ConstantInstance where
 
 import Data.Monoid as M
 
@@ -12,4 +12,4 @@ instance Functor (Constant a) where
 instance Monoid a =>
          Applicative (Constant a) where
   pure b = Constant mempty
-  (Constant a1) <*> (Constant a2) = Constant (a1 M.<> a2)
+  (Constant a) <*> (Constant b) = Constant (a M.<> b)

@@ -1,6 +1,6 @@
-module FixerUpper where
+module Ch17.FixerUpper where
 
 -- 1.
-a = const <$> Just "Hello" <*> pure "World"
+f1 = const <$> Just "Hello" <*> pure "World"
 
-b = (,,,) <$> Just 90 <*> Just 10 <*> Just "Tireness" <*> pure [1, 2, 3]
+f2 = (,,,) <$> Just 90 <*> Just "Tierness" <*> pure [1, 2, 3]

@@ -1,4 +1,4 @@
-module ItentityInstance where
+module Ch17.IdentityInstance where
 
 newtype Identity a =
   Identity a

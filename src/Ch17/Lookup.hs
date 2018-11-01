@@ -1,4 +1,4 @@
-module Lookup where
+module Ch17.Lookup where
 
 import Data.List (elemIndex)
 import Control.Applicative

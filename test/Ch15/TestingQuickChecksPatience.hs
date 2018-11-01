@@ -36,8 +36,10 @@ data Bull
 instance Arbitrary Bull where
   arbitrary = frequency [(1, return Fools), (1, return Twoo)]
 
+instance Semigroup Bull where
+  (<>) _ _ = Fools
+
 instance Monoid Bull where
   mempty = Fools
-  mappend _ _ = Fools
 
 type BullMappend = Bull -> Bull -> Bull -> Bool

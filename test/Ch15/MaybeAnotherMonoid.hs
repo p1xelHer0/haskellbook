@@ -9,24 +9,26 @@ newtype First' a = First'
   { getFirst' :: Optional a
   } deriving (Eq, Show)
 
-instance Monoid (First' a) where
-  mempty =
-    First'
-    { getFirst' = Nada
-    }
-  mappend (First' Nada) (First' y) =
+instance Semigroup (First' a) where
+  (<>) (First' Nada) (First' y) =
     First'
     { getFirst' = y
     }
-  mappend (First' x) _ =
+  (<>) (First' x) _ =
     First'
     { getFirst' = x
     }
-  mappend _ (First' y) =
+  (<>) _ (First' y) =
     First'
     { getFirst' = y
     }
-  mappend _ _ =
+  (<>) _ _ =
+    First'
+    { getFirst' = Nada
+    }
+
+instance Monoid (First' a) where
+  mempty =
     First'
     { getFirst' = Nada
     }
