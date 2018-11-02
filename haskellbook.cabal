@@ -57,6 +57,8 @@ test-suite test
                   , Ch16.Possibly
                   , Ch16.ShortExercise
                   , Ch17.BadMonoid
+                  , Ch17.ListApplicative
+                  , Ch17.VariationsOnEither
   build-depends:    base
                   , haskellbook
                   , hspec

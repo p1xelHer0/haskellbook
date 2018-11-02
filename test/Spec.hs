@@ -14,6 +14,7 @@ import qualified Ch16.Possibly as Possibly
 import qualified Ch16.ShortExercise as Either
 -- import qualified Ch17.BadMonoid as BadMonoid
 import qualified Ch17.ListApplicative as ListApplicative
+import qualified Ch17.VariationsOnEither as VariationsOnEither
 
 main :: IO ()
 main = do
@@ -31,3 +32,4 @@ main = do
   Either.tests
   -- BadMonoid.tests
   ListApplicative.tests
+  VariationsOnEither.tests

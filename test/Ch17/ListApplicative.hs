@@ -4,6 +4,7 @@ import Test.QuickCheck
 import Test.QuickCheck.Checkers
 import Test.QuickCheck.Classes
 
+-- List
 data List a
   = Nil
   | Cons a
@@ -49,7 +50,51 @@ instance Eq a =>
          EqProp (List a) where
   (=-=) = eq
 
+-- ZipList
+newtype ZipList' a =
+  ZipList' (List a)
+  deriving (Eq, Show)
+
+take' :: Int -> List a -> List a
+take' 0 _ = Nil
+take' _ Nil = Nil
+take' n (Cons x xs) = Cons x (take' (n - 1) xs)
+
+instance Functor ZipList' where
+  fmap f (ZipList' xs) = ZipList' $ fmap f xs
+
+instance Applicative ZipList' where
+  pure x = ZipList' (Cons x Nil)
+  ZipList' Nil <*> _ = ZipList' Nil
+  _ <*> ZipList' Nil = ZipList' Nil
+  ZipList' (Cons f fs) <*> ZipList' (Cons x xs) =
+    ZipList' (Cons (f x) (fs <*> xs))
+
+instance Arbitrary a =>
+         Arbitrary (ZipList' a) where
+  arbitrary = genZipList
+
+genZipList
+  :: Arbitrary a
+  => Gen (ZipList' a)
+genZipList = do
+  a <- arbitrary
+  return (ZipList' a)
+
+instance Eq a =>
+         EqProp (ZipList' a) where
+  xs =-= ys = xs' `eq` ys'
+    where
+      xs' =
+        let (ZipList' l) = xs
+        in take' 3000 l
+      ys' =
+        let (ZipList' l) = ys
+        in take' 3000 l
+
 tests :: IO ()
 tests = do
   putStrLn "ListApplicative: "
   quickBatch $ applicative (undefined :: List (String, Char, Integer))
+  putStrLn "ZipListApplicative: "
+  quickBatch $ applicative (undefined :: ZipList' (String, Char, Integer))
