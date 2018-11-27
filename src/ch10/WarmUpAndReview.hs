@@ -1,4 +1,4 @@
-module WarmUpAndReview where
+module Ch10.WarmUpAndReview where
 
 -- 1.
 stops = "pbtdkg"

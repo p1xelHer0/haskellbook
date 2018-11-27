@@ -59,6 +59,7 @@ test-suite test
                   , Ch17.BadMonoid
                   , Ch17.ListApplicative
                   , Ch17.VariationsOnEither
+                  , Ch17.ValidateTheInstances
   build-depends:    base
                   , haskellbook
                   , hspec
